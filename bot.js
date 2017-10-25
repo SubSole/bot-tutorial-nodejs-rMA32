@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var today = new Date.now()
+var today = new Date.now();
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
