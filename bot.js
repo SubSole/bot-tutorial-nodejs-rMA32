@@ -3,6 +3,7 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var today = new Date();
+today.setHours(today.getHours()-5); 
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
