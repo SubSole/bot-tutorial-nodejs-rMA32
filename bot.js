@@ -30,7 +30,7 @@ function respond() {
   else if(request.text && botRegexKillMax.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Killbots deployed. Targeting: 38 Matthew Road, Branford, CT");
-    postMessage("http://img74.laughinggif.com/pic/HTTP21lZGlhLmdpcGh5LmNvbS9tZWRpYS85blRQVU40SDJueU5pL2dpcGh5LmdpZgloglog.gif");
+    postMessage("http://33.media.tumblr.com/15c616a60297c1e3df46026b5c2e2d05/tumblr_mzi9vq53P51rtsuwto1_500.gif");
     this.res.end();
   } 
   else if(request.text && botRegexKillJeff.test(request.text)) {
