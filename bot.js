@@ -164,7 +164,7 @@ function respond() {
   }
   else if(request.text && botRegexGarf.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + today.getFullYear() + '/' + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + '.gif');
+    postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + today.getFullYear() + '/' + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()-1) + '.gif');
     this.res.end();
   }
   
