@@ -37,7 +37,7 @@ function respond() {
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("garfield: posts today's garfield strip /n commands: lists commands");
+    postMessage("garfield: posts today's garfield strip" + /n + "commands: lists commands");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
