@@ -29,14 +29,12 @@ function respond() {
   }
   else if(request.text && botRegexKillMax.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Killbots deployed. Targeting..");
-    postMessage("38 Matthew Road, Branford, CT");
+    postMessage("Killbots deployed. Targeting: 38 Matthew Road, Branford, CT");
     this.res.end();
   } 
   else if(request.text && botRegexKillJeff.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Pleasurebots deployed. Targeting..");
-    postMessage("651 St. Marks Avenue, Brooklyn, NY");
+    postMessage("Pleasurebots deployed. Targeting: 651 St. Marks Avenue, Brooklyn, NY");
     this.res.end();
   } 
   else if(request.text && botRegexTest1.test(request.text)) {
@@ -51,7 +49,7 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: /help /garfield /killmax /killjeff");
+    postMessage("commands: /help /garfield \n/killmax /killjeff");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
