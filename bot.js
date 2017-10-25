@@ -51,7 +51,7 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: /help /garfield");
+    postMessage("commands: /help /garfield /killmax /killjeff");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
@@ -193,7 +193,7 @@ function respond() {
   }
   else if(request.text && botRegexGarf.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + today.getFullYear() + '/' + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()-1) + '.gif');
+    postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + today.getFullYear() + '/' + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()) + '.gif');
     this.res.end();
   }
   
