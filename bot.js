@@ -161,13 +161,13 @@ function respond() {
     postMessage("https://docs.google.com/forms/d/e/1FAIpQLSdrbe5iBRaBC7EWoodVm8z6285-dG2EdHXAOMOgz8md8T1jwQ/viewform");
     this.res.end();
   }
-  else if(request.text && botDuck.test(request.text)) {
+  else if(request.text && botRegexGarf.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/2017/2017-10-24.gif");
     this.res.end();
   }
   
-  else if(request.text && botRegexGarf.test(request.text)) {
+  else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
     if(0.6 >= Math.random() > 0.3)
       postMessage(siege1);
