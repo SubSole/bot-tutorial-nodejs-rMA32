@@ -37,7 +37,7 @@ function respond() {
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: lists available commands");
+    postMessage("commands: lists available commands /nW");
     postMessage("garfield: posts today's garfield strip");
     this.res.end();
   } 
