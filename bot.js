@@ -30,11 +30,13 @@ function respond() {
   else if(request.text && botRegexKillMax.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Killbots deployed. Targeting: 38 Matthew Road, Branford, CT");
+    postMessage("http://img74.laughinggif.com/pic/HTTP21lZGlhLmdpcGh5LmNvbS9tZWRpYS85blRQVU40SDJueU5pL2dpcGh5LmdpZgloglog.gif");
     this.res.end();
   } 
   else if(request.text && botRegexKillJeff.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Pleasurebots deployed. Targeting: 651 St. Marks Avenue, Brooklyn, NY");
+    postMessage("http://geekologie.com/2014/03/13/pole-dancing-robots.gif");
     this.res.end();
   } 
   else if(request.text && botRegexTest1.test(request.text)) {
