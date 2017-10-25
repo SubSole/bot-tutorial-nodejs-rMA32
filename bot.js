@@ -19,6 +19,7 @@ function respond() {
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
+  var today = new Date()
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -163,7 +164,7 @@ function respond() {
   }
   else if(request.text && botRegexGarf.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/2017/2017-10-24.gif");
+    postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + today.getFullYear() + '/' + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + '.gif');
     this.res.end();
   }
   
