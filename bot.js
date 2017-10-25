@@ -32,7 +32,7 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Commands: /garfield");
+    postMessage("/help /garfield");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
