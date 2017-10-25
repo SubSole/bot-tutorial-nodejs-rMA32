@@ -34,13 +34,13 @@ function respond() {
   } 
   else if(request.text && botRegexKillJeff.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Sexbots deployed. Targeting..");
+    postMessage("Pleasurebots deployed. Targeting..");
     postMessage("651 St. Marks Avenue, Brooklyn, NY");
     this.res.end();
   } 
   else if(request.text && botRegexTest.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("test");
+    postMessage(today.getDate());
     this.res.end();
   } 
   else if(request.text && botRegexSlut.test(request.text)) {
