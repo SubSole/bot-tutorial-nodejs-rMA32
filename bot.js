@@ -40,7 +40,7 @@ function respond() {
   } 
   else if(request.text && botRegexTest1.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("date:" + today.getHours());
+    postMessage("date:" + today.getHours() + today.getMinutes());
     this.res.end();
   } 
   else if(request.text && botRegexSlut.test(request.text)) {
