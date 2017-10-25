@@ -19,7 +19,7 @@ function respond() {
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
-                "MIA","BUF","SF","WAS","NYJ","TB"]
+                "MIA","BUF","SF","WAS","NYJ","TB"];
   var today = Date.now();
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
