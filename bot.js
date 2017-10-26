@@ -42,13 +42,20 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: /help /garfield \n/killmax /killjeff /killlee /killadam");
+    postMessage("commands: /help /garfield \n/kill");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("this command is being worked on. Sorry");
-    this.res.end();
+    if(request.text.substring(6, request.text.length) == "kill" ) {
+      this.res.writeHead(200);
+      postMessage("Who do you want me to kill?");
+      this.res.end();
+    }
+    else {
+      this.res.writeHead(200);
+      postMessage("What command do you need help with?");
+      this.res.end();
+    }
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
