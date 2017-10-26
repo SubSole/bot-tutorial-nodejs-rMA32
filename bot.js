@@ -74,7 +74,7 @@ function respond() {
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: lists available commands \ngarfield: posts today's garfield strip");
+    postMessage("this command is being worked on. Sorry");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
