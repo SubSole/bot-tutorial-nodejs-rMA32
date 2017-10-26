@@ -18,7 +18,7 @@ function respond() {
       botRegexDaf = /^\/dafuq/; botRegexMA32 = /^\/pending/; botRegexTrade = /^\/trade/; 
       botRegexGarf = /^\/garfield/; botRegexHelp = /^\/help/; botRegexCommands = /^\/commands/;
       botRegexTest1 = /^\/test1/; botRegexKillMax = /^\/killmax/; botRegexKillJeff = /^\/killjeff/;
-      botRegex69 = /69/;
+      botRegex69 = /69/; botRegexKillAdam = /^\/killadam/; botRegexKillLee = /^\/killlee/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -46,6 +46,17 @@ function respond() {
     postMessage("http://geekologie.com/2014/03/13/pole-dancing-robots.gif");
     this.res.end();
   } 
+  else if(request.text && botRegexKillAdam.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Who?");
+    this.res.end();
+  } 
+  else if(request.text && botRegexKillLee.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Gay pleasurebots deployed.");
+    postMessage("https://media.giphy.com/media/fnuNpzOFxXnPO/giphy.gif");
+    this.res.end();
+  } 
   else if(request.text && botRegexTest1.test(request.text)) {
     this.res.writeHead(200);
     postMessage("date:" + today.getHours() + today.getMinutes());
@@ -58,7 +69,7 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: /help /garfield \n/killmax /killjeff");
+    postMessage("commands: /help /garfield \n/killmax /killjeff /killlee \n/killadam");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
