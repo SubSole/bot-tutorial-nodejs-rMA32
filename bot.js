@@ -77,28 +77,46 @@ function respond() {
   }  
 
   else if(request.text && botRegexKill.test(request.text)) {
-    if(request.text.substring(6, request.text.length) == "Max") {
+    if(request.text.substring(6, request.text.length) == "Max" || request.text.substring(6, request.text.length) == "max" 
+      || request.text.substring(6, request.text.length) == "Comando" || request.text.substring(6, request.text.length) == "comando" ) {
       this.res.writeHead(200);
       postMessage("Killbots deployed. Targeting: 38 Matthew Road, Branford, CT");
       postMessage("http://33.media.tumblr.com/15c616a60297c1e3df46026b5c2e2d05/tumblr_mzi9vq53P51rtsuwto1_500.gif");
       this.res.end();
     }
-    else if(request.text.substring(6, request.text.length) == "Jeff") {
+    else if(request.text.substring(6, request.text.length) == "Jeff" || request.text.substring(6, request.text.length) == "jeff" 
+      || request.text.substring(6, request.text.length) == "Irwin" || request.text.substring(6, request.text.length) == "irwin" ) {
       this.res.writeHead(200);
       postMessage("Pleasurebots deployed. Targeting: 651 St. Marks Avenue, Brooklyn, NY");
       postMessage("http://geekologie.com/2014/03/13/pole-dancing-robots.gif");
       this.res.end();
     }
-    else if(request.text.substring(6, request.text.length) == "Adam") {
+    else if(request.text.substring(6, request.text.length) == "Adam" || request.text.substring(6, request.text.length) == "adam" 
+      || request.text.substring(6, request.text.length) == "Doroski" || request.text.substring(6, request.text.length) == "doroski" ) {
       this.res.writeHead(200);
       postMessage("Who?");
       this.res.end();
     }
-    
-    else if(request.text.substring(6, request.text.length) == "Lee") {
+    else if(request.text.substring(6, request.text.length) == "Lee" || request.text.substring(6, request.text.length) == "lee" 
+      || request.text.substring(6, request.text.length) == "Mike" || request.text.substring(6, request.text.length) == "mike" ) {
       this.res.writeHead(200);
       postMessage("Gay pleasurebots deployed.");
       postMessage("https://media.giphy.com/media/fnuNpzOFxXnPO/giphy.gif");
+      this.res.end();
+    }    
+    else if(request.text.substring(6, request.text.length) == "Scott" || request.text.substring(6, request.text.length) == "scott" 
+      || request.text.substring(6, request.text.length) == "Ofrias" || request.text.substring(6, request.text.length) == "ofrias" ) {
+      this.res.writeHead(200);
+      postMessage("Ketchup bots deployed.");
+      postMessage("https://i.imgur.com/y56WI.gif");
+      this.res.end();
+    }    
+    else if(request.text.substring(6, request.text.length) == "Rich" || request.text.substring(6, request.text.length) == "rich" 
+      || request.text.substring(6, request.text.length) == "Mullen" || request.text.substring(6, request.text.length) == "mullen"
+      || request.text.substring(6, request.text.length) == "Moon" || request.text.substring(6, request.text.length) == "moon"     ) {
+      this.res.writeHead(200);
+      postMessage("Droidekas deployed.");
+      postMessage("http://cdn3.simplebotics.com/wp-content/uploads/2015/10/droideka.gif");
       this.res.end();
     }
     else {
