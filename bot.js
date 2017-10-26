@@ -11,7 +11,7 @@ function respond() {
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;
       botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
-      botRegexSiege = /^\/siege/; 
+      botRegexSiege = /^\/siege/; botRegexKill = /^\/kill/i;
       botRegexGarf = /^\/garfield/; botRegexHelp = /^\/help/; botRegexCommands = /^\/commands/;
       botRegexTest1 = /^\/test1/; botRegexKillMax = /^\/killmax/; botRegexKillJeff = /^\/killjeff/;
       botRegex69 = /69/; botRegexKillAdam = /^\/killadam/; botRegexKillLee = /^\/killlee/; botRegexKnicks = /Knicks/; 
@@ -99,6 +99,17 @@ function respond() {
     this.res.end();
   }  
 
+  else if(request.text && botRegexKill.test(request.text)) {
+    if(request.text.substring(6, request.text.length) == "Max") {
+      this.res.writeHead(200);
+      postMessage("Killbots deployed. Targeting: 38 Matthew Road, Branford, CT");
+      postMessage("http://33.media.tumblr.com/15c616a60297c1e3df46026b5c2e2d05/tumblr_mzi9vq53P51rtsuwto1_500.gif");
+      this.res.end();
+    }
+    else {
+      postMessage("Who would you like me to kill?");
+    }
+  } 
   else if(request.text && botRegexTw.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
