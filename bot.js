@@ -3,6 +3,7 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var today = new Date();
+var firstday = new Date(2017, 9, 24);
 today.setHours(today.getHours()-4); 
 
 function respond() {
@@ -17,6 +18,7 @@ function respond() {
       botRegexDaf = /^\/dafuq/; botRegexMA32 = /^\/pending/; botRegexTrade = /^\/trade/; 
       botRegexGarf = /^\/garfield/; botRegexHelp = /^\/help/; botRegexCommands = /^\/commands/;
       botRegexTest1 = /^\/test1/; botRegexKillMax = /^\/killmax/; botRegexKillJeff = /^\/killjeff/;
+      botRegex69 = /69/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -27,6 +29,11 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
+  else if(request.text && botRegex69.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("nice");
+    this.res.end();
+  } 
   else if(request.text && botRegexKillMax.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Killbots deployed. Targeting: 38 Matthew Road, Branford, CT");
