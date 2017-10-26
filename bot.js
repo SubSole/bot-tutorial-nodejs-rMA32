@@ -69,7 +69,7 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: /help /garfield \n/killmax /killjeff /killlee \n/killadam");
+    postMessage("commands: /help /garfield \n/killmax /killjeff /killlee /killadam");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
