@@ -9,9 +9,9 @@ today.setHours(today.getHours()-4);
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;
-      botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i;
+      botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botRegexDilbert = /^\/dilbert/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexId = /^\/id/;
-      botRegexSiege = /^\/siege/; botRegexKill = /^\/kill/i;
+      botRegexSiege = /^\/siege/; botRegexKill = /^\/kill/i; botRegexLockhorns = /^\/lockhorns/;
       botRegexGarf = /^\/garfield/; botRegexHelp = /^\/help/; botRegexCommands = /^\/commands/;
       botRegexTest1 = /^\/test1/; 
       botRegex69 = /69/; botRegexKnicks = /Knicks/; 
@@ -42,7 +42,7 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: /help /garfield \n/kill /id");
+    postMessage("commands: /help /garfield /kill /id /lockhorns /dilbert");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
@@ -59,6 +59,16 @@ function respond() {
     else if(request.text.substring(6, request.text.length) == "id" ) {
       this.res.writeHead(200);
       postMessage("Links to today's Wizard of Id strip");
+      this.res.end();
+    }
+    else if(request.text.substring(6, request.text.length) == "lockhorns" ) {
+      this.res.writeHead(200);
+      postMessage("Links to today's Lockhorns strip");
+      this.res.end();
+    }    
+    else if(request.text.substring(6, request.text.length) == "dilbert" ) {
+      this.res.writeHead(200);
+      postMessage("Links to today's Dilbert strip");
       this.res.end();
     }
     else {
@@ -154,6 +164,17 @@ function respond() {
   else if(request.text && botRegexId.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.gocomics.com/wizardofid/");
+    this.res.end();
+  }
+  else if(request.text && botRegexLockhorns.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://lockhorns.com/");
+    this.res.end();
+  }
+  
+  else if(request.text && botRegexDilbert.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.gocomics.com/dilbert-classics");
     this.res.end();
   }
   else if(request.text && botRegexSiege.test(request.text)) {
