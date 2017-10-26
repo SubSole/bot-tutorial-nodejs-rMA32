@@ -10,7 +10,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;
       botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexId = /^\/id/;
       botRegexSiege = /^\/siege/; botRegexKill = /^\/kill/i;
       botRegexGarf = /^\/garfield/; botRegexHelp = /^\/help/; botRegexCommands = /^\/commands/;
       botRegexTest1 = /^\/test1/; 
@@ -42,13 +42,23 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: /help /garfield \n/kill");
+    postMessage("commands: /help /garfield \n/kill /id");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
     if(request.text.substring(6, request.text.length) == "kill" ) {
       this.res.writeHead(200);
       postMessage("Who do you want me to kill?");
+      this.res.end();
+    }
+    else if(request.text.substring(6, request.text.length) == "garfield" ) {
+      this.res.writeHead(200);
+      postMessage("Posts today's Garfield strip");
+      this.res.end();
+    }
+    else if(request.text.substring(6, request.text.length) == "id" ) {
+      this.res.writeHead(200);
+      postMessage("Links to today's Wizard of Id strip");
       this.res.end();
     }
     else {
@@ -137,10 +147,15 @@ function respond() {
   } 
   else if(request.text && botRegexGarf.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + today.getFullYear() + '/' + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()) + '.gif');
+    postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + today.getFullYear() 
+                + '/' + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()) + '.gif');
     this.res.end();
   }
-  
+  else if(request.text && botRegexId.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.gocomics.com/wizardofid/");
+    this.res.end();
+  }
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
     if(0.6 >= Math.random() > 0.3)
