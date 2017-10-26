@@ -13,8 +13,8 @@ function respond() {
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
       botRegexSiege = /^\/siege/; botRegexKill = /^\/kill/i;
       botRegexGarf = /^\/garfield/; botRegexHelp = /^\/help/; botRegexCommands = /^\/commands/;
-      botRegexTest1 = /^\/test1/; botRegexKillMax = /^\/killmax/; botRegexKillJeff = /^\/killjeff/;
-      botRegex69 = /69/; botRegexKillAdam = /^\/killadam/; botRegexKillLee = /^\/killlee/; botRegexKnicks = /Knicks/; 
+      botRegexTest1 = /^\/test1/; 
+      botRegex69 = /69/; botRegexKnicks = /Knicks/; 
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -34,30 +34,7 @@ function respond() {
     this.res.writeHead(200);
     postMessage("Fuck Jim Dolan");
     this.res.end();
-  } 
-  else if(request.text && botRegexKillMax.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Killbots deployed. Targeting: 38 Matthew Road, Branford, CT");
-    postMessage("http://33.media.tumblr.com/15c616a60297c1e3df46026b5c2e2d05/tumblr_mzi9vq53P51rtsuwto1_500.gif");
-    this.res.end();
-  } 
-  else if(request.text && botRegexKillJeff.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Pleasurebots deployed. Targeting: 651 St. Marks Avenue, Brooklyn, NY");
-    postMessage("http://geekologie.com/2014/03/13/pole-dancing-robots.gif");
-    this.res.end();
-  } 
-  else if(request.text && botRegexKillAdam.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Who?");
-    this.res.end();
-  } 
-  else if(request.text && botRegexKillLee.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Gay pleasurebots deployed.");
-    postMessage("https://media.giphy.com/media/fnuNpzOFxXnPO/giphy.gif");
-    this.res.end();
-  } 
+  }  
   else if(request.text && botRegexTest1.test(request.text)) {
     this.res.writeHead(200);
     postMessage("date:" + today.getHours() + today.getMinutes());
@@ -104,6 +81,24 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Killbots deployed. Targeting: 38 Matthew Road, Branford, CT");
       postMessage("http://33.media.tumblr.com/15c616a60297c1e3df46026b5c2e2d05/tumblr_mzi9vq53P51rtsuwto1_500.gif");
+      this.res.end();
+    }
+    else if(request.text.substring(6, request.text.length) == "Jeff") {
+      this.res.writeHead(200);
+      postMessage("Pleasurebots deployed. Targeting: 651 St. Marks Avenue, Brooklyn, NY");
+      postMessage("http://geekologie.com/2014/03/13/pole-dancing-robots.gif");
+      this.res.end();
+    }
+    else if(request.text.substring(6, request.text.length) == "Adam") {
+      this.res.writeHead(200);
+      postMessage("Who?");
+      this.res.end();
+    }
+    
+    else if(request.text.substring(6, request.text.length) == "Lee") {
+      this.res.writeHead(200);
+      postMessage("Gay pleasurebots deployed.");
+      postMessage("https://media.giphy.com/media/fnuNpzOFxXnPO/giphy.gif");
       this.res.end();
     }
     else {
