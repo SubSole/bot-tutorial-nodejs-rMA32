@@ -8,9 +8,10 @@ today.setHours(today.getHours()-4);
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexSalt = /^\/salt/;
-      botODB = /(.*\s+)(.*odb)(\s+.*)/i; botRegexId = /^\/id/;
-      botRegexP = /^\/PDL/i;  botRegexSiege = /^\/siege/; botRegexKill = /^\/kill/i;
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;
+      botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
+      botRegexSiege = /^\/siege/; botRegexKill = /^\/kill/i;
       botRegexGarf = /^\/garfield/; botRegexHelp = /^\/help/; botRegexCommands = /^\/commands/;
       botRegexTest1 = /^\/test1/; 
       botRegex69 = /69/; botRegexKnicks = /Knicks/; 
@@ -41,36 +42,31 @@ function respond() {
   } 
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("commands: /help /garfield \n/kill /help");
+    postMessage("commands: /help /garfield \n/killmax /killjeff /killlee /killadam");
     this.res.end();
   } 
   else if(request.text && botRegexHelp.test(request.text)) {
-    if(request.text.substring(6, request.text.length) == "kill" ) {
-      this.res.writeHead(200);
-      postMessage("Who would you like me to kill?");
-      this.res.end();
-    }
-    else if(request.text.substring(6, request.text.length) == "garfield" ) {
-      this.res.writeHead(200);
-      postMessage("Posts today's garfield strip");
-      this.res.end();
-    }
-    else if(request.text.substring(6, request.text.length) == "commands" ) {
-      this.res.writeHead(200);
-      postMessage("Lists all available commands");
-      this.res.end();
-    }
-    else {
-      this.res.writeHead(200);
-      postMessage("What command would you like help with?");
-      this.res.end();
-    }
+    this.res.writeHead(200);
+    postMessage("this command is being worked on. Sorry");
+    this.res.end();
+  } 
+  else if(request.text && botRegexDL.test(request.text)) {
+    this.res.writeHead(200);
+    //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
+    postMessage("http://daddyleagues.com/nml18/team/"+request.text.substring(5,8)+"/depthchart");
+    this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.imgur.com/B5BSVqH.png");
     this.res.end();
   } 
+  else if(request.text && botRegexSC.test(request.text)) {
+    this.res.writeHead(200);
+    
+    postMessage("http://daddyleagues.com/nml18/team/"+request.text.substring(5,8)+"/schedule");
+    this.res.end();
+  }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
@@ -101,12 +97,6 @@ function respond() {
       postMessage("Who?");
       this.res.end();
     }
-    else if(request.text.substring(6, request.text.length) == "Prieto" || request.text.substring(6, request.text.length) == "prieto" 
-      || request.text.substring(6, request.text.length) == "James" || request.text.substring(6, request.text.length) == "james" ) {
-      this.res.writeHead(200);
-      postMessage("What the fuck is wrong with you?");
-      this.res.end();
-    }   
     else if(request.text.substring(6, request.text.length) == "Lee" || request.text.substring(6, request.text.length) == "lee" 
       || request.text.substring(6, request.text.length) == "Mike" || request.text.substring(6, request.text.length) == "mike" ) {
       this.res.writeHead(200);
@@ -133,17 +123,17 @@ function respond() {
       postMessage("Who would you like me to kill?");
     }
   } 
+  else if(request.text && botRegexTw.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
+    this.res.end();
+  } 
   else if(request.text && botRegexGarf.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/" + today.getFullYear() + '/' + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()) + '.gif');
     this.res.end();
   }
-  else if(request.text && botRegexId.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.gocomics.com/wizardofid/" + today.getFullYear() + '/' + (today.getMonth()+1) 
-                +'/'+(today.getDate());
-    this.res.end();
-  }
+  
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
     if(0.6 >= Math.random() > 0.3)
