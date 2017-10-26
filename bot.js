@@ -9,7 +9,7 @@ today.setHours(today.getHours()-4);
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexSalt = /^\/salt/;
-      botODB = /(.*\s+)(.*odb)(\s+.*)/i; botRegexSalt = /^\/id/;
+      botODB = /(.*\s+)(.*odb)(\s+.*)/i; botRegexId = /^\/id/;
       botRegexP = /^\/PDL/i;  botRegexSiege = /^\/siege/; botRegexKill = /^\/kill/i;
       botRegexGarf = /^\/garfield/; botRegexHelp = /^\/help/; botRegexCommands = /^\/commands/;
       botRegexTest1 = /^\/test1/; 
@@ -140,7 +140,7 @@ function respond() {
   }
   else if(request.text && botRegexId.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.gocomics.com/wizardofid//26" + today.getFullYear() + '/' + (today.getMonth()+1) 
+    postMessage("http://www.gocomics.com/wizardofid/" + today.getFullYear() + '/' + (today.getMonth()+1) 
                 +'/'+(today.getDate());
     this.res.end();
   }
