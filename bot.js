@@ -32,12 +32,12 @@ function respond() {
   } 
   else if(request.text && botRegexWalt.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Fuck walt");
+    postMessage("Fuck him");
     this.res.end();
   } 
   else if(request.text && botRegexWalt1.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Fuck walt");
+    postMessage("Fuck him");
     this.res.end();
   } 
   else if(request.text && botRegexKnicks.test(request.text)) {
