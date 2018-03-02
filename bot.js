@@ -166,6 +166,14 @@ function respond() {
       postMessage("http://cdn3.simplebotics.com/wp-content/uploads/2015/10/droideka.gif");
       this.res.end();
     }
+    else if(request.text.substring(6, request.text.length) == "Dave" || request.text.substring(6, request.text.length) == "Kubiak" 
+      || request.text.substring(6, request.text.length) == "Kuby" || request.text.substring(6, request.text.length) == "Kubi"
+      || request.text.substring(6, request.text.length) == "dave" || request.text.substring(6, request.text.length) == "kubiak"     ) {
+      this.res.writeHead(200);
+      postMessage("Superior pitcher bot deployed.");
+      postMessage("http://www.strangefunvideos.com/images/content/191644.gif");
+      this.res.end();
+    }
     else {
       postMessage("Who would you like me to kill?");
     }
