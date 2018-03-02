@@ -37,7 +37,7 @@ function respond() {
   } 
   else if(request.text && botRegexMets.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("The Wilpons can kiss my shiny meta ass");
+    postMessage("The Wilpons can kiss my shiny metal ass");
     this.res.end();
   } 
   else if(request.text && botRegexWalt1.test(request.text)) {
