@@ -175,7 +175,7 @@ function respond() {
       this.res.end();
     }
     else {
-      postMessage("Who would you like me to kill?");
+      postMessage("I don't understand.");
     }
   } 
   else if(request.text && botRegexTw.test(request.text)) {
